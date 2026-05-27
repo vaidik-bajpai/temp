@@ -46,23 +46,7 @@
 @layer utilities {
   .loader-surface {
     isolation: isolate;
-    background: #080808;
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      opacity: 0.18;
-      background-image: linear-gradient(
-        to bottom,
-        transparent 0 50%,
-        rgba(217, 255, 117, 0.55) 51% 52%,
-        transparent 53%
-      );
-      background-size: 100% 7px;
-      mix-blend-mode: screen;
-    }
+    background: transparent;
   }
 
   .loader-panel-left {

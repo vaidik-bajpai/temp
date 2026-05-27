@@ -1,4 +1,3 @@
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
 
@@ -17,24 +16,24 @@ const ProjectCard = ({
   type,
   description,
 }: ProjectCardInterface) => {
-  const outlineRef = useRef<HTMLSpanElement>(null)
+  const outlineRef = useRef<HTMLSpanElement>(null);
 
   const onMouseEnter = () => {
     gsap.fromTo(
-        outlineRef.current,
-        {
-            opacity: 0.5,
-            scale: 1.05,
-        },
-        {
-            opacity: 0,
-            scale: 1,
-            duration: 0.35,
-            ease: "power3.out",
-            overwrite: "auto",
-        }
+      outlineRef.current,
+      {
+        opacity: 0.5,
+        scale: 1.05,
+      },
+      {
+        opacity: 0,
+        scale: 1,
+        duration: 0.35,
+        ease: "power3.out",
+        overwrite: "auto",
+      },
     );
-  }
+  };
   return (
     <article
       className="
@@ -69,13 +68,16 @@ const ProjectCard = ({
       </h3>
       <p className="mt-5 text-sm leading-6 text-zinc-400">{description}</p>
 
-      <span className="corner-frame-b"/>
-      <span className="corner-frame-a"/>
-      <span className="
+      <span className="corner-frame-b" />
+      <span className="corner-frame-a" />
+      <span
+        className="
         pointer-events-none absolute -top-2 -bottom-2 -left-2 -right-2
         border-1 border-[#d9ff75]
         opacity-0
-      " ref={outlineRef}></span>
+      "
+        ref={outlineRef}
+      ></span>
     </article>
   );
 };
