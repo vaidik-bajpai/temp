@@ -2,51 +2,52 @@ import ProjectCard from "../components/project-cards";
 const projects = [
   {
     code: "01",
-    title: "Signal Atlas",
-    type: "Brand system / motion",
+    title: "Model Observatory",
+    type: "MLOps / monitoring",
     year: "2026",
     description:
-      "A kinetic identity for a product studio, built around distorted grids and fast editorial rhythm.",
+      "Placeholder case study for drift tracking, evaluation dashboards, alert thresholds, and model health reporting.",
   },
   {
     code: "02",
-    title: "Blackout Desk",
-    type: "Interface design",
+    title: "Retrieval Engine",
+    type: "RAG / vector search",
     year: "2025",
     description:
-      "Dense analytics surfaces with sharp contrast, granular data states, and lightweight interaction loops.",
+      "Placeholder case study for embeddings, ranking experiments, chunking strategies, and answer quality checks.",
   },
   {
     code: "03",
-    title: "Static Bloom",
-    type: "Creative direction",
+    title: "Forecast Stack",
+    type: "Time series / pipelines",
     year: "2025",
     description:
-      "Campaign visuals mixing film grain, broken typography, and tactile product photography treatments.",
+      "Placeholder case study for feature engineering, baseline comparison, retraining cadence, and batch inference.",
   },
 ];
 
 const Projects = () => {
   return (
     <section id="work" className="work-band border-y border-zinc-100/10">
-      <div className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+      <div className="mx-auto grid min-h-screen max-w-7xl content-center px-5 py-24 md:px-8">
         <div className="mb-9 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="reveal section-kicker">Selected work</p>
-            <h2 className="reveal mt-3 text-4xl font-black uppercase leading-none text-zinc-50 md:text-6xl">
-              Case files
+            <h2 className="reveal mt-3 text-5xl font-black uppercase leading-none text-zinc-50 md:text-7xl">
+              ML case files
             </h2>
           </div>
-          <p className="reveal max-w-md text-sm leading-6 text-zinc-400">
-            A compact archive of identities, product surfaces, and campaign
-            systems shaped with motion-first thinking.
+          <p className="reveal max-w-lg text-base leading-7 text-zinc-300">
+            Placeholder archive of experiments, pipelines, model services, and
+            evaluation systems built around measurable outcomes.
           </p>
         </div>
 
-        <div className="flex gap-3">
+        <div className="project-grid reveal">
           {projects.map((project) => {
             return (
               <ProjectCard
+                key={project.title}
                 title={project.title}
                 code={project.code}
                 type={project.type}
