@@ -7,6 +7,8 @@ interface ProjectCardInterface {
   year: string;
   type: string;
   description: string;
+  tech?: string[];
+  highlights?: string[];
 }
 
 const ProjectCard = ({
@@ -15,6 +17,8 @@ const ProjectCard = ({
   year,
   type,
   description,
+  tech = [],
+  highlights = [],
 }: ProjectCardInterface) => {
   const outlineRef = useRef<HTMLSpanElement>(null);
 
@@ -52,6 +56,27 @@ const ProjectCard = ({
       <p className="mt-5 max-w-md text-sm leading-6 text-zinc-400">
         {description}
       </p>
+
+      {tech.length > 0 && (
+        <div className="mt-6 flex flex-wrap gap-2">
+          {tech.map((item) => (
+            <span
+              className="border border-zinc-100/10 bg-zinc-100/5 px-2 py-1 text-[0.65rem] uppercase tracking-[0.16em] text-zinc-300"
+              key={item}
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {highlights.length > 0 && (
+        <ul className="mt-6 space-y-2 text-sm leading-5 text-zinc-300">
+          {highlights.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      )}
 
       <span className="corner-frame-b" />
       <span className="corner-frame-a" />

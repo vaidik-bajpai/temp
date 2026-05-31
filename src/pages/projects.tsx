@@ -2,27 +2,45 @@ import ProjectCard from "../components/project-cards";
 const projects = [
   {
     code: "01",
-    title: "Model Observatory",
-    type: "MLOps / monitoring",
-    year: "2026",
+    title: "DDoS Detection System",
+    type: "Python / Scikit-learn / Flask",
+    year: "2025",
     description:
-      "Placeholder case study for drift tracking, evaluation dashboards, alert thresholds, and model health reporting.",
+      "I built a predictive ML system for real-time DDoS detection using Random Forest and SVM, trained and evaluated on large-scale network traffic records.",
+    tech: ["Python", "Scikit-learn", "Pandas", "Flask", "Matplotlib"],
+    highlights: [
+      "Achieved 94% detection accuracy",
+      "Processed 120,000+ network records",
+      "Reduced simulated threat exposure by 70%",
+    ],
   },
   {
     code: "02",
-    title: "Retrieval Engine",
-    type: "RAG / vector search",
+    title: "ShadowDrop",
+    type: "Secure steganography tool",
     year: "2025",
     description:
-      "Placeholder case study for embeddings, ranking experiments, chunking strategies, and answer quality checks.",
+      "I built a secure image steganography tool that encrypts files before embedding them into images for covert storage and controlled access.",
+    tech: ["Python", "OpenCV", "Cryptography", "NumPy", "PIL", "Tkinter"],
+    highlights: [
+      "AES-256-CBC file encryption",
+      "PBKDF2-HMAC-SHA256 password protection",
+      "Adaptive 1/2/4-bit LSB encoding",
+    ],
   },
   {
     code: "03",
-    title: "Forecast Stack",
-    type: "Time series / pipelines",
-    year: "2025",
+    title: "MindMate",
+    type: "AI mental health chatbot",
+    year: "2024",
     description:
-      "Placeholder case study for feature engineering, baseline comparison, retraining cadence, and batch inference.",
+      "I created an AI-powered chatbot for real-time emotional support with multimodal emotion detection from facial expressions and voice tone.",
+    tech: ["Python", "TensorFlow", "OpenCV", "NLTK", "Flask", "Streamlit"],
+    highlights: [
+      "85%+ response relevance",
+      "88% emotion detection accuracy",
+      "Flask API and Streamlit interface",
+    ],
   },
 ];
 
@@ -34,12 +52,12 @@ const Projects = () => {
           <div>
             <p className="reveal section-kicker">Selected work</p>
             <h2 className="reveal mt-3 text-5xl font-black uppercase leading-none text-zinc-50 md:text-7xl">
-              ML case files
+              Applied systems
             </h2>
           </div>
           <p className="reveal max-w-lg text-base leading-7 text-zinc-300">
-            Placeholder archive of experiments, pipelines, model services, and
-            evaluation systems built around measurable outcomes.
+            Projects I built across threat detection, secure image
+            steganography, and multimodal AI support tools.
           </p>
         </div>
 
@@ -53,6 +71,8 @@ const Projects = () => {
                 type={project.type}
                 description={project.description}
                 year={project.year}
+                tech={project.tech}
+                highlights={project.highlights}
               />
             );
           })}

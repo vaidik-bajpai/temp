@@ -1,43 +1,55 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useRef } from "react";
 
-export default function Loader() {
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      defaults: {
-        duration: 1.4,
-        ease: "power4.inOut",
-      },
-    });
+interface LoaderProps {
+  onComplete: () => void;
+}
 
-    tl.from(
-      ".loader-mark",
-      {
-        opacity: 0,
-        y: -72,
-        filter: "blur(12px)",
-        duration: 0.55,
-      },
-      0,
-    );
-    tl.to(
-      ".loader-mark",
-      {
-        opacity: 0,
-        y: 34,
-        filter: "blur(8px)",
-        duration: 0.42,
-      },
-      0.72,
-    );
-    tl.to(".loader-left", { xPercent: -120 }, 1);
-    tl.to(".loader-right", { xPercent: 120 }, 1);
+export default function Loader({ onComplete }: LoaderProps) {
+  const loader = useRef<HTMLDivElement>(null);
 
-    tl.set(".loader", { display: "none" });
-  }, []);
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        defaults: {
+          duration: 1.4,
+          ease: "power4.inOut",
+        },
+        onComplete,
+      });
+
+      tl.from(
+        ".loader-mark",
+        {
+          opacity: 0,
+          y: -72,
+          filter: "blur(12px)",
+          duration: 0.55,
+        },
+        0,
+      );
+      tl.to(
+        ".loader-mark",
+        {
+          opacity: 0,
+          y: 34,
+          filter: "blur(8px)",
+          duration: 0.42,
+        },
+        0.72,
+      );
+      tl.to(".loader-left", { xPercent: -120 }, 1);
+      tl.to(".loader-right", { xPercent: 120 }, 1);
+    },
+    { scope: loader },
+  );
 
   return (
-    <div className="loader loader-surface pointer-events-none fixed inset-0 z-[9999]">
+    <div
+      ref={loader}
+      className="loader loader-surface pointer-events-none fixed inset-0 z-[9999]"
+    >
       <div
         className="loader-left loader-panel-left absolute inset-0 [clip-path:polygon(0_0,58%_0,42%_100%,0_100%)]"
         aria-hidden="true"
