@@ -19,6 +19,7 @@ const projects = [
     title: "ShadowDrop",
     type: "Secure steganography tool",
     year: "2025",
+    link: "https://github.com/gaurangi813/SteganoProject",
     description:
       "I built a secure image steganography tool that encrypts files before embedding them into images for covert storage and controlled access.",
     tech: ["Python", "OpenCV", "Cryptography", "NumPy", "PIL", "Tkinter"],
@@ -73,6 +74,7 @@ const Projects = () => {
                 year={project.year}
                 tech={project.tech}
                 highlights={project.highlights}
+                link={project.link}
               />
             );
           })}

@@ -80,13 +80,13 @@ const education = [
     period: "Aug 2020 - May 2021",
     title: "Class 12",
     institution: "Dr. Virendra Swarup Education Centre",
-    detail: "Percentage: 86",
+    detail: "Senior secondary education",
   },
   {
     period: "Aug 2018 - May 2019",
     title: "Class 10",
     institution: "Dr. Virendra Swarup Education Centre, Kanpur, U.P.",
-    detail: "Percentage: 85",
+    detail: "Secondary education",
   },
 ];
 
@@ -274,7 +274,7 @@ function App() {
     let frame = 0;
     const duration = 22;
 
-      scrambleTimer.current = window.setInterval(() => {
+    scrambleTimer.current = window.setInterval(() => {
       setScrambledTitle(
         heroTitle
           .split("")
@@ -326,7 +326,7 @@ function App() {
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
           </div>
-          <a href="mailto:hello@gaurangi.studio" className="nav-chip">
+          <a href="mailto:gaurangitripathi13@gmail.com" className="nav-chip">
             ML Engineer
           </a>
         </nav>
@@ -353,10 +353,10 @@ function App() {
 
               </h1>
 
-              
+
             </div>
 
-            
+
 
             <div className="reveal hero-portrait-stage">
               <div ref={heroPortrait} className="hero-portrait-magnet">
@@ -366,18 +366,18 @@ function App() {
                   onPointerLeave={handleHeroImageLeave}
                 />
                 <img
-                  src="/guarangi.webp"
+                  src="/Gaurangi.png"
                   alt="Gaurangi Tripathi"
-                  className="hero-portrait hero-portrait-main portrait-mask"
+                  className="hero-portrait hero-portrait-main portrait-mask opacity-10"
                 />
                 <img
-                  src="/guarangi.webp"
+                  src="/Gaurangi.png"
                   alt=""
                   className="hero-portrait hero-portrait-glitch hero-portrait-glitch-a"
                   aria-hidden="true"
                 />
                 <img
-                  src="/guarangi.webp"
+                  src="/Gaurangi.png"
                   alt=""
                   className="hero-portrait hero-portrait-glitch hero-portrait-glitch-b"
                   aria-hidden="true"
@@ -390,7 +390,7 @@ function App() {
                     View work
                   </a>
                   <a
-                    href="mailto:hello@gaurangi.studio"
+                    href="mailto:gaurangitripathi13@gmail.com"
                     className="hero-action hero-action-secondary"
                   >
                     Contact me
@@ -591,16 +591,28 @@ function App() {
           <div className="mx-auto flex min-h-[72vh] max-w-7xl flex-col justify-center gap-8 px-5 py-24 md:px-8">
             <p className="reveal section-kicker">Contact</p>
             <a
-              className="reveal contact-link"
-              href="mailto:hello@gaurangi.studio"
+              className="reveal contact-link text-6xl"
+              href="mailto:gaurangitripathi13@gmail.com"
             >
-              hello@gaurangi.studio
+              gaurangitripathi13@gmail.com
             </a>
             <div className="reveal flex flex-wrap gap-3 text-xs uppercase tracking-[0.26em] text-zinc-500">
-              <span>LinkedIn</span>
-              <span>GitHub</span>
-              <span>Kaggle</span>
-              <span>Research notes</span>
+              <a
+                href="https://www.linkedin.com/in/gaurangi-tripathi-a9459226a"
+                target="_blank"
+                rel="noreferrer"
+                className="cursor-pointer"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/gaurangi813"
+                target="_blank"
+                rel="noreferrer"
+                className="cursor-pointer"
+              >
+                GitHub
+              </a>
             </div>
           </div>
         </section>
